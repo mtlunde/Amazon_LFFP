@@ -1,3 +1,9 @@
+// Developed for Amazon by Matt Lunde
+//
+// Sorts an array of COPMs putting items with larger dimensions towards the top of the list.
+// Can be found in line 375 of LFFPFinalAuto and line 223 of LFFPFinalManual.
+//
+// Questions can be directed to mtl15@comcast.net
 
 import java.util.*;
 

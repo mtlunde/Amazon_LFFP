@@ -1,3 +1,17 @@
+// Developed for Amazon by Matt Lunde
+//
+// This is an algorithm that packs a box using the Less Flexibility First Principle.
+// It takes inputs from an excel file and automatically runs through the whole set.
+//
+// Questions can be directed to mtl15@comcast.net
+//
+// Excel input file should have one sheet contianing all data and a second sheet containing the box suite. 
+// All other sheets can be used for output results. Seen in lines 38-40.
+// The first sheet (data sheet) must have fsi numbers in column B, item dimensions in columns F-H, recommended 
+// box dimensions in columns J-L, and the number of units of the same item in an order in column M.
+// An example is uploaded on Box.com
+// 
+// An example of how to write outputs to an excel file is shown in lines 163-178.
 
 import java.io.*;
 import java.util.*;
@@ -15,7 +29,7 @@ public class LFFPFinalAuto { // all inputs must be in the same units
       long timerstart;
       long timerstop;
       
-      // if uncommented these two lines will change the output location from the console to a text file called output.txt
+      // if uncommented, these two lines will change the output location from the console to a text file called output.txt
       //PrintStream OUT = new PrintStream(new FileOutputStream("output.txt"));
       //System.setOut(OUT);
       
@@ -371,6 +385,7 @@ public class LFFPFinalAuto { // all inputs must be in the same units
    }   
    
    // evaluates all COPMs that are passed to it
+   // this currently does nothing of value but the program breaks if it is removed
    public static int[][] evaluateCOPMs(int[][] copmdata, int[][] boxdata, String[][][] table, int numofitems, int[] arr) {
       int[][] evaluatedcopms = new int[copmdata.length][10];
       
@@ -695,7 +710,7 @@ public class LFFPFinalAuto { // all inputs must be in the same units
                //outputlocations[i][0] = (validusedcopms[i][4] + (outputorientation[i][1] / CUBIT_SIZE / 2.0) - 1) * CUBIT_SIZE * -1; // outputs center of actual object from where it is placed
                //outputlocations[i][1] = (validusedcopms[i][5] + (outputorientation[i][0] / CUBIT_SIZE / 2.0) - 1) * CUBIT_SIZE; // outputs center of actual object from where it is placed
                //outputlocations[i][2] = (validusedcopms[i][6] + (outputorientation[i][2] / CUBIT_SIZE) - 1) * CUBIT_SIZE; // outputs center of actual object from where it is placed
-            } else { // (validcopms[i][7] == 2)
+            } else { // (validusedcopms[i][7] == 2)
                outputorientation[i][0] = Math.max(itemdata[i][1], itemdata[i][2]);
                outputorientation[i][1] = Math.min(itemdata[i][1], itemdata[i][2]);
                outputorientation[i][2] = itemdata[i][0];

@@ -1,4 +1,9 @@
-
+// Developed for Amazon by Matt Lunde
+//
+// Item Object
+// Stores item information
+//
+// Questions can be directed to mtl15@comcast.net
 
 public class Item {
    

@@ -1,5 +1,10 @@
+// Developed for Amazon by Matt Lunde
+//
+// 3D Grid Object
+// Represents the box
+//
+// Questions can be directed to mtl15@comcast.net
 
-// 3D grid object
 public class Grid3D {
 
 	private String[][][] table;  // tb initialized

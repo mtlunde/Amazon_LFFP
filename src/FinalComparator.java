@@ -1,3 +1,9 @@
+// Developed for Amazon by Matt Lunde
+//
+// Sorts the final array of used items.
+// Can be found in line 686 of LFFPFinalAuto and line 513 of LFFPFinalManual.
+//
+// Questions can be directed to mtl15@comcast.net
 
 import java.util.*;
 

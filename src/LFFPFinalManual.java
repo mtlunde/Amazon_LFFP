@@ -1,3 +1,9 @@
+// Developed for Amazon by Matt Lunde
+//
+// This is an algorithm that packs a box using the Less Flexibility First Principle.
+// It takes manual inputs for item and box dimensions and only runs for the current box input.
+//
+// Questions can be directed to mtl15@comcast.net
 
 import java.util.*;
 
@@ -30,7 +36,7 @@ public class LFFPFinalManual { // all inputs must be in the same units
       int count = 0;
       
       double[][] rawboxdata = new double[1][3];
-      rawboxdata[0][0] = 10; rawboxdata[0][1] = 7; rawboxdata[0][2] = 2; // input box dimensions
+      rawboxdata[0][0] = 10; rawboxdata[0][1] = 7; rawboxdata[0][2] = 1; // input box dimensions
       Grid3D x = new Grid3D(rawboxdata[0][1], rawboxdata[0][0], rawboxdata[0][2], CUBIT_SIZE);
       int[][] boxdata = new int[1][3];
       boxdata[0][0] = (int)(rawboxdata[0][1] / CUBIT_SIZE); boxdata[0][1] = (int)(rawboxdata[0][0] / CUBIT_SIZE); boxdata[0][2] = (int)(rawboxdata[0][2] / CUBIT_SIZE);
@@ -62,7 +68,7 @@ public class LFFPFinalManual { // all inputs must be in the same units
             continue;
          }
       }
-      //printBoxArray(x.getTable(), boxdata); // if uncommented, this will print the final state of the box
+      printBoxArray(x.getTable(), boxdata); // if uncommented, this will print the final state of the box
       double[][] outputlocations = translateItemLocation(usedcopms, numofitems, count, itemdata);
       double utilization = computeVolumeUtilization(x.getTable(), boxdata);
       long timerstop = System.currentTimeMillis();

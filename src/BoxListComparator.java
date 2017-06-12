@@ -1,3 +1,9 @@
+// Developed for Amazon by Matt Lunde
+//
+// Sorts the array of box dimensions putting the lowest volume box at the top of the list.
+// Can be found in line 801 of LFFPFinalAuto.
+//
+// Questions can be directed to mtl15@comcast.net
 
 import java.util.*;
 
